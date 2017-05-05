@@ -1,6 +1,4 @@
-import { log, logErr } from './lib/utils'
 import * as fsUtil from './lib/fileSystem.js'
-import _ from 'lodash'
 
 function main (dryRun) {
   const settingsFile = '~/.homesick/repos/dotfiles/settings/syncsettings.yaml'
