@@ -12,7 +12,9 @@
   "license": "MIT",
   "dependencies": {
     "expand-home-dir": "^0.0.3",
-    "js-yaml": "^3.8.3"
+    "js-yaml": "^3.8.3",
+    "lodash": "^4.17.4",
+    "ramda": "^0.23.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

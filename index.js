@@ -1,21 +1,12 @@
-import * as utils from './lib/utils'
-import expandHomeDir from 'expand-home-dir'
+import { log, logErr } from './lib/utils'
+import * as fsUtil from './lib/fileSystem.js'
+import _ from 'lodash'
 
-const { log } = utils
+const settingsFile = '~/.homesick/repos/dotfiles/settings/syncsettings.yaml'
 
-const rc = '~/.homesick/repos/dotfiles/settings/syncsettings.yaml'
-const settings = utils.loadSettingsFileSync(rc)
+const settings = fsUtil.loadSettings(settingsFile)
 
-let files = []
-for (let prop in settings) {
-  if (settings.hasOwnProperty(prop) && settings[prop]) {
-    files.push(
-      ...settings[prop].map(({ src, dst }) => ({ src, dst, type: prop }))
-    )
-  }
-}
-
-log(files)
+log(settings)
 
 // | parentDirectoryExists(dst)
 // | fileExists(src)
