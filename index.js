@@ -6,9 +6,8 @@ const settingsFile = '~/.homesick/repos/dotfiles/settings/syncsettings.yaml'
 
 const settings = fsUtil.loadSettings(settingsFile)
 
-log(settings)
+const promises = settings.map(file => fsUtil.createLink(file))
 
-// | parentDirectoryExists(dst)
-// | fileExists(src)
-// | link(src, dst)
-
+Promise.all(promises)
+  .then(() => { console.log('Done!') })
+  .catch(console.error)
