@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should flatten settings to an array of items with the kind mapped 1`] = `
+Array [
+  Object {
+    "dst": "~/temp",
+    "src": "./source",
+    "type": "symlink",
+  },
+  Object {
+    "dst": "~/temp",
+    "src": "./source",
+    "type": "hardlink",
+  },
+]
+`;
