@@ -1,7 +1,4 @@
 import R from 'ramda'
-import path from 'path'
-import expandHomeDir from 'expand-home-dir'
-
 import * as lib from './lib/fileSystem.js'
 import { defaultArgs } from './lib/defaultOptions'
 
