@@ -3,17 +3,15 @@ import path from 'path'
 import expandHomeDir from 'expand-home-dir'
 
 import * as fsUtil from './lib/fileSystem.js'
-import { defaultArgs } from './lib/defaultArgs'
+import { defaultArgs } from './lib/defaultOptions'
 
 export default function main (customArgs) {
   const args = R.merge(defaultArgs, customArgs)
-  const baseDir = expandHomeDir(args.baseDir)
-  const settingsFile = path.join(baseDir, 'syncsettings.yaml')
 
-  const settings = fsUtil.loadSettings(settingsFile)
+  const settings = fsUtil.loadSettings(args)
 
   const promises = settings
-    .map(file => fsUtil.createLink(file, args))
+    .map(file => fsUtil.createLink(args, file))
 
   Promise.all(promises)
     .then(() => { console.log('Done!') })
