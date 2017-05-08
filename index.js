@@ -6,7 +6,7 @@ import * as fsUtil from './lib/fileSystem.js'
 import { defaultArgs } from './lib/defaultArgs'
 
 export default function main (customArgs) {
-  const args = R.merge(customArgs, defaultArgs)
+  const args = R.merge(defaultArgs, customArgs)
   const baseDir = expandHomeDir(args.baseDir)
   const settingsFile = path.join(baseDir, 'syncsettings.yaml')
 
