@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
-    "example": "babel-node examples/homesick.js --silent || true",
+    "example": "babel-node examples/example.js --silent || true",
     "test": "jest",
     "test:watch": "jest --watch"
   },
