@@ -1,25 +1,26 @@
-import symlink from '../index.js'
+import symlink from '../index'
 import { resolve } from 'path'
 
-const settings = {
+const settingsObj = {
   symlink: {
     title: 'Symlink Example',
-    src: './src/example.txt',
+    src: resolve('./src/example.txt'),
     dst: './dst/example.symlink.txt'
   },
   hardlink: {
     title: 'Hardlink Example',
-    src: './src/example.txt',
+    src: resolve('./src/example.txt'),
     dst: './dst/example.hardlink.txt'
   },
   copy: {
     title: 'Copy Example',
-    src: './src/example.txt',
+    src: resolve('./src/example.txt'),
     dst: './dst/example.copy.txt'
   }
 }
 
 symlink({
-  baseDir: resolve(__DIRNAME),
+  settingsObj,
+  baseDir: __dirname,
   isSilent: false,
 })
