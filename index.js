@@ -2,7 +2,7 @@ import R from 'ramda'
 import * as lib from './lib/fileSystem.js'
 import { defaultArgs } from './lib/defaultOptions'
 
-export default function main (customArgs) {
+export default function main(customArgs) {
   const args = R.merge(defaultArgs, customArgs)
 
   const settings = lib.loadSettings(args)
