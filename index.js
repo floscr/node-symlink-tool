@@ -5,7 +5,7 @@ import { defaultArgs } from './lib/defaultOptions'
 export default function main (customArgs) {
   const args = R.merge(defaultArgs, customArgs)
 
-  const settings = customArgs.settingsObj || lib.loadSettings(arg)
+  const settings = customArgs.settingsObj || lib.loadSettings(args)
 
   const promises = settings
     .map(file => lib.createLink(args, file))
